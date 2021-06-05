@@ -1,0 +1,3 @@
+,
+    name={avatarlistarray[i].name},
+    work={avatarlistarray[i].work} 

@@ -1,0 +1,16 @@
+fs.writeFileSync("r1.txt","hello1\nhjghdsdj\ndjghkjdsh");
+fs.appendFile("r1.txt","\nhello2",function(err){})
+fs.unlink('r1.txt',function(err){})
+const a=fs.readFileSync("r1.txt");
+console.log(a);
+console.log(a.toString());
+
+const fs=require("fs")
+//creating new folder
+// fs.mkdirSync("fold1")
+//creating new file
+fs.writeFileSync("fold1/r1.txt","hello1");
+const a=fs.readFileSync("fold1/r1.txt","utf8");
+console.log(a)
+console.log(fs.readFileSync("fold1/r1.txt","utf8"))
+fs.unlinkSync("fold1/r1.txt")

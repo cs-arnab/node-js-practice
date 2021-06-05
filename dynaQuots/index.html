@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dynamic quotes</title>
+</head>
+<body>
+    <div id="quotes"></div>
+    <div id="author"></div>
+    <button id="newQ">new Quotes</button>
+
+    <script>
+        const quotes=document.getElementById("quotes")
+        const author=document.getElementById("author")
+        const newQ=document.getElementById("newQ")
+        let rnum=Math.floor(Math.random()*10)
+        const api="https://type.fit/api/quotes"
+        let realData=""
+
+        const nq=()=>{
+            <!-- let rnum=Math.floor(Math.random()*10) -->
+            <!-- quotes.innerText = `${realData[rnum].text}` -->
+            <!-- quotes.innerText=`${realData[rnum].author}` -->
+            console.log(rnum)
+            console.log(realData[rnum].text)
+            console.log(realData[rnum].author)
+        }
+        <!-- console.log(realData[rnum].text) -->
+
+        const getQuotes=async()=>{
+        <!-- const api="https://type.fit/api/quotes" -->
+        try{
+            let data=await fetch(api)               //await is for wait bec it is asynchronous
+            let realData=await data.json()
+            
+            console.log(realData.length)
+            console.log(realData[rnum].text)
+            nq()
+        }
+        catch(error){}
+        }
+        newQ.addEventListener("click",nq)
+        getQuotes()
+        <!-- console.log(realData[3].author) -->
+        <!-- console.log(realData[3].text) -->
+        <!-- console.log(realData[rnum].text) -->
+    </script>
+</body>
+</html>

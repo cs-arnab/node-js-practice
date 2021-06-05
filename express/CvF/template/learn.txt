@@ -1,0 +1,2 @@
+1.first do same like outside views
+2.change the name views to template
